@@ -1,0 +1,1 @@
+dotenv : we have to add this in oyr file as soon as possbile means on the top of code in index.js so that when our backend load so the environmentvarable will available in whole application 
