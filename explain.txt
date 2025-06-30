@@ -1,2 +1,3 @@
 dotenv : we have to add this in oyr file as soon as possbile means on the top of code in index.js so that when our backend load so the environmentvarable will available in whole application 
 cookie parser: this is used to acees the cookie of uer browser and set the cokkies basically used to perform the crud opration on the cookies of a user browser
+in this project what we doing that we are stoing any image or video in our dska storage thn we send to cloudinary where te image store that it return a link that we store in our db
