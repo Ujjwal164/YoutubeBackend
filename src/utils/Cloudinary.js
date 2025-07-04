@@ -18,7 +18,7 @@ import fs from 'fs';
             const result = await cloudinary.uploader.upload(filePath, {
                 resource_type: 'auto'
             });
-            console.log('Image uploaded successfully:', result);
+            fs.unlinkSync(filePath); // Clean up the file after upload from the local system
             return result;
         } catch (error) {
             fs.unlinkSync(filePath); // Clean up the file after upload from the local system

@@ -47,16 +47,16 @@ const userSchema = new mongoose.Schema({
 
 // this is used to bcypt our password before saving it to the database
 // we are using bcrypt to hash the password before saving it to the database
-userSchema.pre("save", function(next) {
+userSchema.pre("save", async function(next) {
     if(!this.isModified("password")) return next(); // this check if password oidifed or not if not than we dont need to hash it again
     // if password is modified than we will hash it
-    this.password = bcrypt.hash(this.password, 10);
+    this.password = await bcrypt.hash(this.password, 10);
     next();
 })
 
 // this is the methd we cretae to compare the password
 // this method will be used to compare the password entered by the user with the hashed password stored
-userSchema.methods.isComparePassword = async function(password) {
+userSchema.methods.isPasswordCorrect  = async function(password) {
     return await bcrypt.compare(password, this.password);
 }
 
